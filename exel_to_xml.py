@@ -13,18 +13,22 @@ class FileGenerator:
         self.create_widgets()
 
     def select_excel_file(self):
+        '''Кнопка выбора excel файла'''
         filename = filedialog.askopenfilename(filetypes=[("Excel files", "*.xls;*.xlsx")])
         self.file_name.set(filename)
         self.f = str(filename)
         return self.f
 
     def select_xml_file(self):
+        '''Кнопка выбора пути xml файла'''
         filename = filedialog.asksaveasfilename(filetypes=[("XML files", "*.xml")])
         self.xml_path.set(filename)
         self.xml_filename = str(filename)
         return self.xml_filename
 
     def generate_file(self):
+        '''Функция запроса подготовленных данных из класса FormatData 
+        и записи их в файл'''
         format_data = FormatData(self.f)
         data = format_data.make_full_data()
         if '.xml' in self.xml_filename:
@@ -36,6 +40,7 @@ class FileGenerator:
         messagebox.showinfo("Успех", "Конфигурация успешно сформирована")    
 
     def create_widgets(self):
+        '''Создание виджетов'''
         excel_label = tk.Label(self.root, text="Выбрать Excel файл:")
         excel_label.pack()
 
