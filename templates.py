@@ -28,7 +28,7 @@ calculated = '''	<calculatedField>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>?!путь</v8:content>
+				<v8:content>?!заголовок</v8:content>
 			</v8:item>
 		</title>
 		<appearance/>
